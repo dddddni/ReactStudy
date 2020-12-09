@@ -1,0 +1,106 @@
+React 사용
+NodeJs 설치
+npm, npx 차이
+npm : 모듈을 패키지해서 모아둔 저장소, 컴퓨터에 남아있음(셋업파일)
+npx : 한번 설치 후 데이터 지움, 실행할때마다 다운받기 때문에 최신 버전 사용 (라이브러리)
+
+새 프로젝트 생성
+npx react-native init 프로젝트 명
+npm create react-app 프로젝트 명
+
+프로젝트 실행
+react-native run-android
+npm start
+
+DOM 관리와 상태값 업데이트관리를 최소화 하고 개발에 집중하기 위해 만들어진 라이브러리, 프레임워크 ex) Vue.js, React.js, ....등
+
+const : 상수 값 변하지 않음
+let : 변수 선언, 자바스크립트의 var기능
+
+Button 대신 TouchableOpacity(터치 이벤트(onPress 등)를 사용할 수 있는 VIew) 사용 하는 이유 
+-> Button 컴포넌트는 안드로이드와 ios에서 다르게 보이기 때문에 관리에 어려움이 있음.
+
+// ES5
+var selected = allJobs.filter(function (job) {
+  return job.isSelected();
+});
+// ES6
+var selected = allJobs.filter(job => job.isSelected());
+
+동등연산자 == : 자료형이 같지 않은 경우, 변환 후 비교 수행. 객체일 경우 같은 메모리 보고 있는지 비교
+부등연산자 != : 같지 않을 경우 참
+일치연산자 === : 자료형 변환없이 같은지 판단
+불일치연산자 !== : 같지 않거나, 같은 자료형이 아닐때 참
+
+useEffet : 컴포넌트의 라이프사이클메서드를 대체하여 사용. render될때 사용 됨.
+- will : 작업 실행 전에 호출
+- did : 작업 실행 직후에 호출
+
+React vs ReactDom
+- React : View를 만들기 위한 라이브러리
+- ReactDom : UI를 실제로 브라우저에 렌더링(Render)할때 사용하는 라이브러리
+
+CDN 
+- 분산되어 있는 서버 그룹을 말하며 이를 작동 시켜 인터넷 콘텐츠를 빠르게 전달 할 수 있는 서비스를 말합니다.
+
+**함수 생성 시 e 파라미터 사용 차이
+
+TODO 추가, 삭제, 상태 변경
+
+1. 기존 검색서비스에 함수 생성해서 서비스 호출 하게끔 처리
+2. react-native에서 서버 연결하고 호출해서 db 조회해옴
+3. 조회 한 데이터를 react-native에서 List를 이용하여 보여줌.
+
+http://221.139.0.163:8090/SearchEG/GetEdiCodeList?gubun=1&ttgubun=3&edival=우루사&dateval=20201005
+
+한 이벤트에 2가지 함수를 사용 하려면 onSearch는 조회 안됨 / onSearch()는 조회는 되지만 scope값이 넘어오지 않아 오류 발생 함.
+
+쿼리문 작성 시 컬럼 이름 모두 표시해주기
+
+javascript의 모든 함수는 return값을 가지고 있습니다.
+return문장이 없다면 undefined를 반환합니다.
+arrow function도 function과 똑같은 함수입니다.
+표현만 다를 뿐입니다. ( closure문제는 지금 생각하실 필요가 없습니다.)
+{} 로 묶으면 function(){} 과 같습니다.
+() => () 이렇게 된다면 ()안의 값이 return값입니다.
+{}로 바꾸고 return 값을 지정하지 않아서 에러가 발생한 경우라고 추측해 봅니다.
+react component는 JSX.Element를 반환해야 합니다.
+
+컴포넌트 이름은 항상 대문자
+
+props
+- class는 항상 this.을 붙여줘야함.
+- 부모 컴포넌트가 자식 컴포넌트한테 전달하는 데이터로, (자식 입장에서)읽기 전용이다.
+state
+- class 뿐이고 컴포넌트에서 저장해야 할 자료.
+- setstate()함수를 이용하여 값 설정
+- this.state로 지정할 수 있는건 생성자에서만 가능
+
+중괄호 안에서 && 연산자 사용 가능. 
+
+map 함수 내에는 고유 key 값을 설정해주는게 좋음.
+
+함수를 화살표함수가 아닌 일반 함수로 정의할 경우에는 클래스 생성자에서 bind을 해줘야함 this.함수이름 = this.함수이름.bind(this);
+
+[ Flow 참고 문서 ] https://pitzcarraldo.medium.com/flow%EB%A1%9C-react-type%EC%A0%95%EC%9D%98%ED%95%98%EA%B8%B0-7d1dbfa9e61b
+
+Ajax(비동기 통신, 서버<-> 클라이언트 간 xml로 데이터를 주고받는 기술)
+fetch vs axios (네트워크 통신을 도와주는 api)
+fetch 
+- 내장 라이브러리이기 때문에 Import 없이 사용 가능
+- 라이브러리 업데이트가 필요없기 때문에 관련 오류 발생 안함.
+- 지원하지 않는 브라우저가 있음
+axios
+- fetch 보다 많은 기능 제공
+- 응답시간 초과 제어 가능
+- JSON 데이터 자동 변화
+- 요청 취소 가능.
+
+async-> 비동기라는 것을 알려주고
+await -> axios를 통해 값을 가져올때 까지 기다림.
+
+Component 파일 명과 export하는 클래스 명이 다를 경우
+1) export할 class앞에 'export' 문구 명시
+2) import 문 사용 시 default as 클래스 명 사용
+
+Map 함수를 이용해서 return하는경우에는 key값을 표시해줘야함.
