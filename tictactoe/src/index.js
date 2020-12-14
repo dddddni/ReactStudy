@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Tictactoe from './Tictactoe';
-import reportWebVitals from './reportWebVitals';
+import Tictactoe2 from './Tictactoe2';
 
 ReactDOM.render(
-  <Tictactoe />,
+  // <Tictactoe />,
+  <Tictactoe2 />,
   document.getElementById('root')
 );
 

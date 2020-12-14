@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-// 네모칸
+// 네모칸 버튼
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
@@ -10,6 +10,7 @@ function Square(props) {
   );
 }
 
+// 네모칸으로 구성된 보드판
 class Board extends React.Component {  
   renderSquare(i) {
     return <Square value = {this.props.squares[i]} onClick = {() => this.props.onClick(i)}/>;
@@ -42,25 +43,35 @@ class Game extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      // history라는 배열안에 squares라는 배열이 들어가있음.
+      // history[0]에 squares 배열
+      // history[1]에 squares 배열
+      // history : 단계를 의미
       history : [{
+        // 단계에서 이루어진 배열의 집합(1번칸에 x, 2번칸에 O의 모음)
         squares : Array(9).fill(null),
         }],
-        stepNumber : 0,
-        xIsNext : true
+      stepNumber : 0,
+      xIsNext : true
       };
     }
 
   handleClick(i){
     // slice() 기존 배열을 수정하지 않고 배열의 복사본을 만들어서 수정
+    // history를 처음부터 stepNumber 까지 복사한다.
     const history  = this.state.history.slice(0, this.state.stepNumber + 1);
+    // 현재 history 배열을 가져온다.
     const current = history[history.length - 1];
+    // 현재 history 배열에 있는 square를 복사한다. 
     const squares = current.squares.slice();
+    // 복사한 square를 가지고 승자를 계산한다.
     if (calculateWinner(squares) || squares[i]){
         return;
     }
 
     squares[i] = this.state.xIsNext ? 'X' : 'O';
     this.setState({
+      // 현재 history배열에 history를 추가한다.
       history : history.concat([{
         squares : squares
       }]),
@@ -128,7 +139,8 @@ function calculateWinner(squares){
 
   for (let i = 0; i < lines.length; i++){
     const [a, b, c] =  lines[i];
-    if (squares[a] && squares[a] === squares[b] && squares[b] === squares[c] && squares[c]){
+
+    if (squares[a] && squares[a] === squares[b] && squares[b] === squares[c]){
       return squares[a];
     }
   }
