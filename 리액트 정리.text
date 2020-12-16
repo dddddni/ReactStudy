@@ -1,5 +1,8 @@
 React 사용
 NodeJs 설치
+https://nodejs.org/ko/
+yarn 설치
+https://classic.yarnpkg.com/en/docs/install/#windows-stable
 npm, npx 차이
 npm : 모듈을 패키지해서 모아둔 저장소, 컴퓨터에 남아있음(셋업파일)
 npx : 한번 설치 후 데이터 지움, 실행할때마다 다운받기 때문에 최신 버전 사용 (라이브러리)
@@ -128,5 +131,3 @@ observable state가 변경되면 우리가 해야하는 일
 
 Action(행동)
 상태에 변화를 일으키는 것. observable state를 변화시키는 코드
-
-
