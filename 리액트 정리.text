@@ -116,7 +116,6 @@ state를 global 한 영역에서 사용하기 위해
 상태를 관찰 가능하게(observable)하게 관리
 mobx 설치 npm install --save mobx mobx-react
 
-
 액션 -> (변경) -> 상태 -> (파생) -> 반응
 
 observable 로 설정한 값이 변경 될때 마다 observer로 설정한 render가 실행됨.
