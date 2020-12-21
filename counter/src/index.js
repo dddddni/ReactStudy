@@ -1,11 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Counter from './App'
+import App from './App'
+import CounterStore  from './stores/counter'
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'mobx-react';
+
+// ReactDOM.render(
+//   <Counter/>,
+//   document.getElementById('root')
+// );
+
+const counter = new CounterStore(); // 스토어 인스턴스 생성
+
+// Provider props에 넣어줌
 
 ReactDOM.render(
-  <Counter/>,
+  <Provider counter = {counter}> 
+    <App/>
+  </Provider>,
   document.getElementById('root')
 );
 
