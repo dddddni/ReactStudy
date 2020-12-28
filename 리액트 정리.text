@@ -155,4 +155,17 @@ Spread Operator
 ES6 문법 정리
 https://m.blog.naver.com/PostView.nhn?blogId=jdub7138&logNo=221075419249&proxyReferer=https:%2F%2Fwww.google.com%2F
 
+함수안에 파라미터 넘겨서 onclick 사용시에는 () => 안에 함수 써줘야함.
+
+[Visual Studio  참조 표시 해제]
+도구 -> 옵션 -> 텍스트 편집기 -> 모든 언어 -> CodeLens -> CodeLens 사용 체크 해제 -> 확인
+
+[const vs var vs let]
+
+var : function-scope
+-> 같은 이름의 변수를 재선언 해도 오류 발생하지 않아, 추후 관리의 어려움이 있음.
+const, let : block-scope
+let : 변수에 재할당 가능
+const : 재선언, 재할당 불가능
+-> immutable
 
