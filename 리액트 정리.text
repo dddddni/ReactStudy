@@ -8,6 +8,7 @@ npm : 모듈을 패키지해서 모아둔 저장소, 컴퓨터에 남아있음(�
 npx : 한번 설치 후 데이터 지움, 실행할때마다 다운받기 때문에 최신 버전 사용 (라이브러리)
 
 새 프로젝트 생성
+npm install -g create-react-app
 npx react-native init 프로젝트 명
 npm create-react-app 프로젝트 명
 
