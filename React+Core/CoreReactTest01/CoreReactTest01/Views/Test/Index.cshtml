@@ -1,0 +1,15 @@
+﻿@using CoreReactTest01.Models
+@model IEnumerable<Data>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>MySQL SELECT 결과</h2>
+<ul>
+    @foreach (var data in Model)
+    {
+        <li>ID : @data.id < 이름: @data.Name,  나이:  @data.Age, 휴대폰: @data.Phone, 이메일: @data.Email  > </li>
+    }
+</ul>
+<hr />
