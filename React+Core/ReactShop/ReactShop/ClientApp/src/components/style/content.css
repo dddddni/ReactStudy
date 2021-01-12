@@ -1,0 +1,58 @@
+﻿/* content.js */
+.carousel-control-next,
+.carousel-control-prev,
+.carousel-indicators {
+    filter: invert(80%);
+}
+
+/* @media screen and (min-width: 991px) {
+  .test {
+    display: none;
+  }
+} */
+
+.Header {
+    font-family: "Noto Sans KR";
+    font-size: 13px;
+}
+
+.item01 {
+    font-family: "Noto Sans KR";
+    font-size: 12px;
+}
+
+.MainContent {
+    padding: 50px;
+}
+
+.MainText {
+    margin-top: 30px;
+    text-align: center;
+    font-family: "Noto Sans KR";
+    font-size: 20px;
+}
+
+.card {
+    background-color: slateblue; 
+    border-width: 0;
+    align-items: center;
+}
+
+.cardItem {
+    width: 18rem;
+    background-color: skyblue;
+    margin: 10px;
+    border: black;
+    border-width: 1px;
+}
+
+.title {
+    font-family: "Noto Sans KR";
+    font-size: 13px;
+}
+
+.content {
+    font-family: "Noto Sans KR";
+    font-size: 12px;
+    letter-spacing: -1px;
+}
